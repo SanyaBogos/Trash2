@@ -1,0 +1,29 @@
+﻿@model IEnumerable<NextInterProj2.Models.Chat>
+@{
+    ViewBag.Title = "Say";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Say</h2>
+<table>
+    <tr>
+        <td>Sender</td>
+        <td>Message</td>
+        <td>Time</td>
+    </tr>
+    @foreach (NextInterProj2.Models.Chat item in ViewBag.Messages)
+    {
+        <tr>
+            <td>@Html.DisplayFor(mod => item.Sender.FirstName)</td>
+            <td>@Html.DisplayFor(mod => item.Message)</td>
+            <td>@Html.DisplayFor(mod => item.Time)</td>
+        </tr>
+    }
+</table>
+
+@using (@Html.BeginForm("Say", "Chat", FormMethod.Post))
+{
+    @Html.Hidden("RecieverUserId", ViewData["RecieverId"])
+    @Html.TextBox("Message", "Enter message")
+    <input type="submit" value="Send" />
+}
