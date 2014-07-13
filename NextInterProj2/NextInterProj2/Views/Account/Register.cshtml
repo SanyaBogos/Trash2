@@ -8,7 +8,7 @@
     <h2>Create new account.</h2>
 </hgroup>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
@@ -48,6 +48,10 @@
             <tr>
                 <td>@Html.LabelFor(m => m.MobileNumber)</td>
                 <td>@Html.TextBoxFor(m => m.MobileNumber)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.Image)</td>
+                <td><input type="file" name="Photo"/></td>
             </tr>
         </table>
         <input type="submit" value="Регистрация" />

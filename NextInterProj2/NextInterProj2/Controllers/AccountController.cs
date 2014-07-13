@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using NextInterProj2.Filters;
 using NextInterProj2.Models;
+using System.IO;
 
 namespace NextInterProj2.Controllers
 {
@@ -79,6 +80,11 @@ namespace NextInterProj2.Controllers
                 // Попытка зарегистрировать пользователя
                 try
                 {
+                    HttpPostedFileBase image = Request.Files["Photo"];
+                    byte[] imageData = null;
+                    if (image.ContentLength > 0)
+                        using (var binaryReader = new BinaryReader(image.InputStream))
+                            imageData = binaryReader.ReadBytes(image.ContentLength);
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password,
                         new
                         {
@@ -86,7 +92,8 @@ namespace NextInterProj2.Controllers
                             FirstName = model.FirstName,
                             LastName = model.LastName,
                             MobileNumber = model.MobileNumber,
-                            BirthDate = model.BirthDate
+                            BirthDate = model.BirthDate,
+                            Image = imageData
                         });
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
