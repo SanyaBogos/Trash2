@@ -1,11 +1,11 @@
 ﻿@model NextInterProj2.Models.RegisterModel
 @{
-    ViewBag.Title = "Регистрация";
+    ViewBag.Title = "Registration";
 }
 
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>Создание новой учетной записи.</h2>
+    <h2>Create new account.</h2>
 </hgroup>
 
 @using (Html.BeginForm())
@@ -14,42 +14,42 @@
     @Html.ValidationSummary()
 
     <fieldset>
-        <legend>Форма регистрации</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Email)
-                @Html.TextBoxFor(m => m.Email)
-            </li>
+        <legend>Registration form</legend>         
+        <table>
+            <tr>
+                <td>@Html.LabelFor(m => m.UserName)</td>
+                <td>@Html.TextBoxFor(m => m.UserName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.Password)</td>
+                <td>@Html.PasswordFor(m => m.Password)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.ConfirmPassword)</td>
+                <td>@Html.PasswordFor(m => m.ConfirmPassword)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.Email)</td>
+                <td>@Html.TextBoxFor(m => m.Email)</td>
+            </tr>
 
-            <li>
-                @Html.LabelFor(m => m.FirstName)
-                @Html.TextBoxFor(m => m.FirstName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.LastName)
-                @Html.TextBoxFor(m => m.LastName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.BirthDate)
-                @Html.TextBoxFor(m => m.BirthDate, new { @class = "datepicker" })
-            </li>
-            <li>
-                @Html.LabelFor(m => m.MobileNumber)
-                @Html.TextBoxFor(m => m.MobileNumber)
-            </li>
-        </ol>
+            <tr>
+                <td>@Html.LabelFor(m => m.FirstName)</td>
+                <td>@Html.TextBoxFor(m => m.FirstName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.LastName)</td>
+                <td>@Html.TextBoxFor(m => m.LastName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.BirthDate)</td>
+                <td>@Html.TextBoxFor(m => m.BirthDate, new { @class = "datepicker" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.MobileNumber)</td>
+                <td>@Html.TextBoxFor(m => m.MobileNumber)</td>
+            </tr>
+        </table>
         <input type="submit" value="Регистрация" />
     </fieldset>
 }
