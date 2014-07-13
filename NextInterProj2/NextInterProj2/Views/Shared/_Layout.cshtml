@@ -65,7 +65,6 @@
     <meta name="keywords" content="blue candy template, free html css website, blue menu bar, dark gray background" />
     <meta name="description" content="Blue Candy is a free CSS Template from templatemo.com that can be used for any purpose." />
     <link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
-    @Styles.Render("~/Content/css")
     @RenderSection("styles", required: false)
 
     @Scripts.Render("~/bundles/jquery")
@@ -108,9 +107,9 @@
                     <li>@Html.ActionLink("About us", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
 
-                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                    <li>@Html.ActionLink("О программе", "About", "Home")</li>
-                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("All messages", "Index", "Chat")</li>
                     <li>@Html.ActionLink("Messages", "Message", "Chat")</li>
                 </ul>
