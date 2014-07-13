@@ -44,6 +44,8 @@ namespace NextInterProj2.Models
         public DateTime BirthDate { get; set; }
 
         public string MobileNumber { get; set; }
+
+        public byte[] Image { get; set; }
     }
 
     [Table("Chat")]
@@ -150,6 +152,9 @@ namespace NextInterProj2.Models
         [StringLength(11, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 11)]
         [Display(Name = "Mobile No.")]
         public string MobileNumber { get; set; }
+
+        [Display(Name = "Photo")]
+        public byte[] Image { get; set; }
     }
 
     public class ExternalLogin
