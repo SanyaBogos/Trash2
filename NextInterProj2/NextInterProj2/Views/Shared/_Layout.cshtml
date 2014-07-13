@@ -1,63 +1,4 @@
-﻿@*<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <title>@ViewBag.Title — приложение ASP.NET MVC</title>
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width" />
-    @Styles.Render("~/Content/css")
-    @RenderSection("styles", required: false)
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/modernizr")
-
-</head>
-<body>
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">@Html.ActionLink("ваша эмблема здесь", "Index", "Home")</p>
-            </div>
-            <div class="float-right">
-                <section id="login">
-                    @Html.Partial("_LoginPartial")
-                </section>
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                        <li>@Html.ActionLink("О программе", "About", "Home")</li>
-                        <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("All messages", "Index", "Chat")</li>
-                        <li>@Html.ActionLink("Messages", "Message", "Chat")</li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <div id="body">
-        @RenderSection("featured", required: false)
-        <section class="content-wrapper main-content clear-fix">
-            @RenderBody()
-        </section>
-    </div>
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>&copy; @DateTime.Now.Year — приложение ASP.NET MVC</p>
-            </div>
-        </div>
-    </footer>
-
-    @RenderSection("scripts", required: false)
-
-</body>
-</html>*@
-
-@*-----------------------------------------------------------------------------------------------*@
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -83,14 +24,13 @@
                 <!-- end of site_title -->
 
                 <div id="header_right">
-                    @*@Html.Partial("_LoginPartial")*@
                     <div id="twitter">
                         @Html.Partial("_LoginPartial")
                     </div>
 
                     <div class="cleaner"></div>
 
-                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <h1>Novus ordo seclorum</h1>
                     <p>Nam suscipit porta aliquam. Sed eget sem lorem, facilisis suscipit lectus. Lorem ipsum dolor sit amet, consectetur.</p>
                     <div class="btn_more image_fr"><a href="#">Read more<span> &raquo;</span></a></div>
 
@@ -102,16 +42,11 @@
 
             <div id="templatemo_menu">
                 <ul>
-                    @*<li>@Html.ActionLink("More info", "AddInfo", "Home")</li>
-                    <li>@Html.ActionLink("All persons", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About us", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
-
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("All messages", "Index", "Chat")</li>
-                    <li>@Html.ActionLink("Messages", "Message", "Chat")</li>
+                    <li>@Html.ActionLink("People", "Message", "Chat")</li>
                 </ul>
             </div>
             <!-- end of templatemo_menu -->
@@ -119,20 +54,15 @@
             <div id="content_wrapper">
                 @RenderSection("featured", required: false)
                 @RenderBody()
-                @*<section class="content-wrapper main-content clear-fix">
-                
-            </section>*@
-
                 <div id="templatemo_footer">
-
                     <div class="col_w300">
                         <h4>Our Pages</h4>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="company.html">Company</a></li>
-                            <li><a href="products.html">Products</a></li>
-                            <li><a href="news.html">News</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("All messages", "Index", "Chat")</li>
+                            <li>@Html.ActionLink("Messages", "Message", "Chat")</li>
                         </ul>
                     </div>
 
@@ -160,7 +90,6 @@
                 <!-- end of footer -->
 
                 <div id="templatemo_copyright">
-
                     Copyright © 2048 <a href="#">Sanya Bogos:)</a> | Designed by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
 
                 </div>
