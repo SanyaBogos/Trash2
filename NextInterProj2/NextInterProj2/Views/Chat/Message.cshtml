@@ -9,7 +9,6 @@
     <tr>
         <td>Name</td>
         <td>Surname</td>
-        <td>Birth date</td>
         <td>Speak</td>
     </tr>
     @foreach (var item in Model)
@@ -17,11 +16,14 @@
         <tr>
             <td>
 
-                @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(item.Image) + "\" />");
+                @Html.Raw("<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(item.Image) + "\" width=\"189\" height=\"255\" />");
             </td>
-            <td>@Html.DisplayFor(model => item.FirstName)</td>
-            <td>@Html.DisplayFor(model => item.LastName)</td>
-            <td>@*@Html.DisplayFor(model => item.BirthDate.ToShortDateString())*@</td>
+            <td>
+                @Html.DisplayFor(model => item.FirstName)
+                <br/>@Html.DisplayFor(model => item.LastName)
+                <br/>@Html.DisplayFor(model => item.Email)
+                <br/>@Html.DisplayFor(model => item.MobileNumber)
+                <br/>@Html.DisplayFor(model => item.BirthDate)</td>
             <td><a href="~/Chat/Say?recieverId=@item.UserId">Let`s speak!</a></td>
         </tr>       
     }

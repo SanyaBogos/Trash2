@@ -65,7 +65,5 @@ namespace NextInterProj2.Controllers
             Conversation(chat.RecieverUserId, chat.SenderUserId);
             return View();
         }
-
-
     }
 }
