@@ -25,7 +25,7 @@ namespace NextInterProj2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
-            Database.SetInitializer<UsersContext>(new DropCreateDatabaseAlways<UsersContext>());
+            Database.SetInitializer(new MyInitializer());
         }
     }
 }
