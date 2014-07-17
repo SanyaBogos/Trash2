@@ -202,7 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-NextInterProj2-20140710182716.mdf" />
-    <Content Include="App_Data\aspnet-NextInterProj2-20140710182716_log.ldf" />
+    <Content Include="App_Data\aspnet-NextInterProj2-20140710182716_log.ldf">
+      <DependentUpon>aspnet-NextInterProj2-20140710182716.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-datepicker3.css" />
     <Content Include="Content\bootstrap-responsive.css" />
