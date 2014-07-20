@@ -400,6 +400,7 @@
     <Content Include="Views\Chat\PeopleSearch.cshtml" />
     <Content Include="Views\Chat\Say.cshtml" />
     <Content Include="Views\Shared\_MenuPartial.cshtml" />
+    <Content Include="Views\Chat\PeopleSearchSurname.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

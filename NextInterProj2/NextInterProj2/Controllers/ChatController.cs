@@ -27,8 +27,17 @@ namespace NextInterProj2.Controllers
         [Authorize]
         public ActionResult PeopleSearch()
         {
-            var people = db.UserProfiles;
-            return View(people.ToList());
+            //var people = db.UserProfiles;
+            //return View(people.ToList());
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult PeopleSearchSurname(string surname)
+        {
+            var people = db.UserProfiles.Where(x =>
+                x.LastName.StartsWith(surname, StringComparison.OrdinalIgnoreCase) == true);
+            return PartialView(people.ToList());
         }
 
         [Authorize]

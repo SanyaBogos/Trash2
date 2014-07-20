@@ -1,11 +1,11 @@
-﻿@model IEnumerable<NextInterProj2.Models.UserProfile>
+﻿@*@model IEnumerable<NextInterProj2.Models.UserProfile>*@
 @{
     ViewBag.Title = "People search";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>@ViewBag.Title</h2>
-<table>
+@*<table>
     <tr>
         <td>Name</td>
         <td>Surname</td>
@@ -27,5 +27,12 @@
             <td><a href="~/Chat/Say?recieverId=@item.UserId">Let`s speak!</a></td>
         </tr>       
     }
-</table>
-
+</table>*@
+<div>
+    @using (Ajax.BeginForm("PeopleSearchSurname", "Chat", new AjaxOptions { UpdateTargetId = "searchPeopleResult" }))
+    { 
+        <input type="text" name="surname" />
+        <input type="submit" value="search" />
+    }
+    @Html.Partial("PeopleSearchSurname")
+</div>
