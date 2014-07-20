@@ -42,11 +42,6 @@
 
             <div id="templatemo_menu">
                 <ul>
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("All messages", "Index", "Chat")</li>
-                    <li>@Html.ActionLink("People", "Message", "Chat")</li>*@
                     @Html.Partial("_MenuPartial")
                 </ul>
             </div>
@@ -62,8 +57,8 @@
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            <li>@Html.ActionLink("All messages", "Index", "Chat")</li>
-                            <li>@Html.ActionLink("Messages", "Message", "Chat")</li>
+                            @*<li>@Html.ActionLink("All messages", "Index", "Chat")</li>
+                            <li>@Html.ActionLink("Messages", "Message", "Chat")</li>*@
                         </ul>
                     </div>
 
@@ -102,9 +97,19 @@
     @*@Scripts.Render("~/bundles/jquery")*@
     <script type="text/javascript">
         $(function () {
+            function callback() {
+                setTimeout(function () {
+                    $("#effect").removeAttr("style").hide().fadeIn();
+                }, 1000);
+            };
             $("#templatemo_menu").children().mouseover(function () {
                 $(this).animate({ height: '+=20', width: '+=20' });
             });
+
+            $("#templatemo_menu").children().click(function () {
+                $(this).effect("Explode", {}, 500, callback);
+            });
+
             $("#templatemo_menu").children().mouseout(function () {
                 $(this).animate({ height: '-=20', width: '-=20' });
             });
