@@ -25,7 +25,7 @@ namespace NextInterProj2.Controllers
         }
 
         [Authorize]
-        public ActionResult Message()
+        public ActionResult PeopleSearch()
         {
             var people = db.UserProfiles;
             return View(people.ToList());
