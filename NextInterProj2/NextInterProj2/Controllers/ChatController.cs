@@ -35,8 +35,12 @@ namespace NextInterProj2.Controllers
         [Authorize]
         public ActionResult PeopleSearchSurname(string surname)
         {
-            var people = db.UserProfiles.Where(x =>
-                x.LastName.StartsWith(surname, StringComparison.OrdinalIgnoreCase) == true);
+            //var people = db.UserProfiles.Where(x =>
+            //    x.LastName.StartsWith(surname, StringComparison.OrdinalIgnoreCase) == true);
+            //var people = db.UserProfiles;
+            var people = from p in db.UserProfiles
+                         where p.LastName == surname
+                         select p;
             return PartialView(people.ToList());
         }
 
