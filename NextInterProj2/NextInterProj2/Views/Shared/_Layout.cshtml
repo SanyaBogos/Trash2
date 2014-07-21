@@ -8,8 +8,9 @@
     <link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
     @RenderSection("styles", required: false)
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/modernizr")
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~bundeles/jqueryval")
+    @Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
     @*/*-----------------------------------------------------------------------------------------------------------*/*@
@@ -95,7 +96,10 @@
         </div>
     </div>
     @*@Scripts.Render("~/bundles/jquery")*@
-    <script type="text/javascript">
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jqueryval")*@
+    @Scripts.Render("~/bundles/modernizr")
+    @*<script type="text/javascript">
         $(function () {
             function callback() {
                 setTimeout(function () {
@@ -114,7 +118,7 @@
                 $(this).animate({ height: '-=20', width: '-=20' });
             });
         });
-    </script>
+    </script>*@
     @RenderSection("scripts", required: false)
 </body>
 </html>

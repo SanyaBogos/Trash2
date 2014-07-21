@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<NextInterProj2.Models.UserProfile>
 
-<div id="searchPeopleResult">
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>Surname</td>
-            <td>Speak</td>
-        </tr>
-        @if (Model != null && Model.Count() > 0)
-        {
-            foreach (var item in Model)
+@if (Model != null && Model.Count() > 0)
+{
+    <div id="searchPeopleResult">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Speak</td>
+            </tr>
+            @foreach (var item in Model)
             {
             <tr>
                 <td>
@@ -22,8 +22,9 @@
                     <br />@Html.DisplayFor(model => item.MobileNumber)
                     <br />@Html.DisplayFor(model => item.BirthDate)</td>
                 <td><a href="~/Chat/Say?recieverId=@item.UserId">Let`s speak!</a></td>
-            </tr>       
+            </tr>
             }
-        }
-    </table>
-</div>
+       
+        </table>
+    </div>
+}

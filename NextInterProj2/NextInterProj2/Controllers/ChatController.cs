@@ -42,6 +42,9 @@ namespace NextInterProj2.Controllers
             var people = from p in db.UserProfiles
                          where p.LastName == surname
                          select p;
+            //ViewBag.People = from p in db.UserProfiles
+            //                 where p.LastName == surname
+            //                 select p;
             return PartialView(people.ToList());
         }
 
