@@ -1,15 +1,16 @@
 ﻿@model IEnumerable<NextInterProj2.Models.UserProfile>
 
-@if (Model != null && Model.Count() > 0)
-{
-    <div id="searchPeopleResult">
-        <table>
-            <tr>
-                <td>Name</td>
-                <td>Surname</td>
-                <td>Speak</td>
-            </tr>
-            @foreach (var item in Model)
+
+<div id="searchPeopleResult">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Surname</td>
+            <td>Speak</td>
+        </tr>
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
             {
             <tr>
                 <td>
@@ -24,7 +25,6 @@
                 <td><a href="~/Chat/Say?recieverId=@item.UserId">Let`s speak!</a></td>
             </tr>
             }
-       
-        </table>
-    </div>
-}
+        }
+    </table>
+</div>
