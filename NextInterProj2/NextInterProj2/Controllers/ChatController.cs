@@ -33,6 +33,7 @@ namespace NextInterProj2.Controllers
         }
 
         [Authorize]
+        [HttpPost]
         public ActionResult PeopleSearchSurname(string surname)
         {
             //var people = db.UserProfiles.Where(x =>
