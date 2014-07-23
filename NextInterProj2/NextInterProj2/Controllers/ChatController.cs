@@ -27,8 +27,6 @@ namespace NextInterProj2.Controllers
         [Authorize]
         public ActionResult PeopleSearch()
         {
-            //var people = db.UserProfiles;
-            //return View(people.ToList());
             return View();
         }
 
@@ -36,15 +34,8 @@ namespace NextInterProj2.Controllers
         [HttpPost]
         public ActionResult PeopleSearchSurname(string surname)
         {
-            //var people = db.UserProfiles.Where(x =>
-            //    x.LastName.StartsWith(surname, StringComparison.OrdinalIgnoreCase) == true);
-            //var people = db.UserProfiles;
-            var people = from p in db.UserProfiles
-                         where p.LastName == surname
-                         select p;
-            //ViewBag.People = from p in db.UserProfiles
-            //                 where p.LastName == surname
-            //                 select p;
+            var people = db.UserProfiles.Where(x =>
+                x.LastName.StartsWith(surname));
             return PartialView(people.ToList());
         }
 
