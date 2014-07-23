@@ -264,6 +264,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\loadingv.gif" />
     <Content Include="Images\templatemo_body.jpg" />
     <Content Include="Images\templatemo_content_top.jpg" />
     <Content Include="Images\templatemo_footer.jpg" />

@@ -5,10 +5,15 @@
 
 <h2>@ViewBag.Title</h2>
 <div>
-    @using (Ajax.BeginForm("PeopleSearchSurname", "Chat", new AjaxOptions { UpdateTargetId = "searchPeopleResult" }))
+    @using (Ajax.BeginForm("PeopleSearchSurname", "Chat", new AjaxOptions
+    {
+        UpdateTargetId = "searchPeopleResult",
+        LoadingElementId = "loading"
+    }))
     { 
         <input type="text" name="surname" />
         <input type="submit" value="Search" />
     }
+    <img id="loading" src="~/Images/loadingv.gif" style="display:none" />
     @Html.Partial("PeopleSearchSurname")
 </div>
